@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alessandro Guazzini's Home Page</title>
+
+  <!-- Load MathJax for LaTeX rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 13px;
+      color: black;
+      background-color: lightsteelblue;
+      margin: 30px;
+      line-height: 1.5;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    img {
+      border: none;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .caption {
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    hr {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>A cosine expansion no one wishes to publish. </h1>
+
+<h2> Alessandro Guazzini. December 31, 2025.</h2>
+
+<p>
+Let \(\mathbf{a} = (a_1,a_2,\dots,a_n)\) and \(\mathbf{b}=(b_1,b_2,\dots,b_n)\) belong to \(\mathbb{R}^n\) with \(n\ge 4\). 
+The dot product is defined as \(\mathbf{a}\cdot\mathbf{b} = \sum_{i=1}^{n} a_i b_i\) and the induced norm as \(\|\mathbf{a}\| = \sqrt{\sum_{i=1}^{n} a_i^2}\), such that \((\mathbb{R}^n,\cdot)\) is the Euclidean space. 
+The angle between \(\mathbf{a}\) and \(\mathbf{b}\), if both nonzero, is defined as \(\theta = \cos^{-1} \frac{\mathbf{a}\cdot\mathbf{b}}{\|\mathbf{a}\|\|\mathbf{b}\|} \in [0,\pi]\).
+</p>
+
+<p>
+If for any \(k\in \{1,\dots,n\}\) \(a_k>0\) and \(b_k>0\), the following theorem presents a finite telescopic series expansion of \(\theta\) involving truncated norms, defined as \(\|\mathbf{a}\|_{\ge k} = \sqrt{\sum_{i=k}^n a_i^2}\).
+</p>
+
+<p>The proof is provided adopting hyperspherical coordinates.</p>
+
+<h3>Theorem</h3>
+<p>
+If for any \(k\) \(a_k>0\) and \(b_k>0\),
+</p>
+
+\[
+\cos \theta =\sqrt{\left(1-\frac{\|\mathbf{a}\|_{\ge2}^2}{\|\mathbf{a}\|_{\ge1}^2}\right)\left(1-\frac{\|\mathbf{b}\|_{\ge2}^2}{\|\mathbf{b}\|_{\ge1}^2}\right)}
++ \sum_{j=2}^{n-1} \sqrt{\left(1-\frac{\|\mathbf{a}\|_{\ge j+1}^2}{\|\mathbf{a}\|_{\ge j}^2}\right)\left(1-\frac{\|\mathbf{b}\|_{\ge j+1}^2}{\|\mathbf{b}\|_{\ge j}^2}\right)} \prod_{k=1}^{j-1} \frac{\|\mathbf{a}\|_{\ge k+1} \|\mathbf{b}\|_{\ge k+1}}{\|\mathbf{a}\|_{\ge k} \|\mathbf{b}\|_{\ge k}}
++ \prod_{k=1}^{n-1} \frac{\|\mathbf{a}\|_{\ge k+1} \|\mathbf{b}\|_{\ge k+1}}{\|\mathbf{a}\|_{\ge k} \|\mathbf{b}\|_{\ge k}}
+\]
+
+<h3>Proof</h3>
+<p>
+Let for any \(k\) \(a_k>0\) and \(b_k>0\). 
+</p>
+
+<p>Let also</p>
+
+\[
+\begin{aligned}
+a_1 &= \|\mathbf{a}\| \cos \phi_1, \\
+a_j &= \|\mathbf{a}\| \cos \phi_j \prod_{k=1}^{j-1} \sin \phi_k, && j=2,\dots,n-1, \\
+a_n &= \|\mathbf{a}\| \prod_{k=1}^{n-1} \sin \phi_k, \\
+b_1 &= \|\mathbf{b}\| \cos \omega_1, \\
+b_j &= \|\mathbf{b}\| \cos \omega_j \prod_{k=1}^{j-1} \sin \omega_k, && j=2,\dots,n-1, \\
+b_n &= \|\mathbf{b}\| \prod_{k=1}^{n-1} \sin \omega_k.
+\end{aligned}
+\]
+<p>with</p>
+\[
+\phi_k = \cos^{-1} \frac{(0,\dots,0,a_k,\dots,a_n)\cdot (0,\dots,0,a_k,0,\dots,0)}{\|(0,\dots,0,a_k,\dots,a_n)\| \|(0,\dots,0,a_k,0,\dots,0)\|},
+\]
+<p>such that</p>
+\[
+\cos \theta = \cos \phi_1 \cos \omega_1 + \sum_{j=2}^{n-1} \cos \phi_j \cos \omega_j \prod_{k=1}^{j-1} \sin \phi_k \sin \omega_k + \prod_{k=1}^{n-1} \sin \phi_k \sin \omega_k
+\]
+
+<p>
+Then for
+\[
+\|a\|_{\ge k}^2 \sin^2 \phi_k + \|a\|_{\ge k}^2\cos^2\phi_k = \|a\|_{\ge k}^2
+\]
+is equivalent to
+\[
+\|a\|_{\ge k}^2 \sin^2 \phi_k + a_k^2 = \|a\|_{\ge k}^2
+\]
+it implies
+\[
+\phi_k = \sin^{-1} \frac{\|\mathbf{a}\|_{\ge k+1}}{\|\mathbf{a}\|_{\ge k}}
+\]
+
+Therefore the proof is completed noting that
+\[
+\sin \sin^{-1} \frac{\|\mathbf{a}\|_{\ge k+1}}{\|\mathbf{a}\|_{\ge k}} = \frac{\|\mathbf{a}\|_{\ge k+1}}{\|\mathbf{a}\|_{\ge k}}
+\]
+and
+\[
+\cos \sin^{-1} \frac{\|\mathbf{a}\|_{\ge k+1}}{\|\mathbf{a}\|_{\ge k}} = \sqrt{1 - \frac{\|\mathbf{a}\|_{\ge k+1}^2}{\|\mathbf{a}\|_{\ge k}^2}}
+\]
+</p>
+
+
+<hr>
+<p>The cases \(n=2\) and \(n=3\) are recovered as special instances via the familiar polar and spherical coordinates systems.</p>
+
+
+
+<p>
+<a href="index.html">Previous page</a>
+</p>
+
+</body>
+</html>
